@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    body{
+        background-color: black;
+        color: aliceblue;
+    }
+    #heading {
+        border: 5px green solid;
+        border-radius: 100%;
+        width: 300px;
+        text-align: center;
+        margin: auto;
+        box-shadow: 2px 4px rgb(0, 72, 0);
+    }
+
+    #area {
+        width: 200px;
+        text-align: center;
+        margin: auto;
+    }
+</style>
+
+<body>
+    <h1 id="heading">Calculator</h1>
+    <p id="area"></p>
+    <script>
+        function inputs() {
+            a = parseInt(prompt("Enter a number"))
+            b = parseInt(prompt("Enter another number"))
+            c = prompt("Enter any one operation from add/subtract/multiply/division/modulus")
+            var result = calculator(a, b, c);
+            document.getElementById("area").innerHTML = "<br>Result: " + result;
+        }
+        function calculator(num1, num2, operator) {
+            switch (operator) {
+                case "add":
+                    return (num1 + num2);
+                case "subtract":
+                    return num1 - num2;
+                case "multiply":
+                    return num1 * num2;
+                case "division":
+                    return num1 / num2;
+                case "modulus":
+                    return num1 % num2;
+                default:
+                    return "Invalid operation";
+            }
+        }
+        document.getElementById("heading").addEventListener("click", inputs)
+    </script>
+</body>
+
+</html>
